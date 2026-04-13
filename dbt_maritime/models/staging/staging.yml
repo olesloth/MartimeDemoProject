@@ -1,0 +1,56 @@
+version: 2
+
+models:
+  - name: stg_eu_mrv_emissions
+    description: "Cleaned EU MRV emissions data — one row per vessel per reporting period"
+    columns:
+      - name: imo_number
+        description: "IMO vessel identification number"
+        tests:
+          - not_null
+      - name: reporting_period
+        description: "Reporting year"
+        tests:
+          - not_null
+      - name: total_co2_emissions_mt
+        description: "Total annual CO2 emissions in metric tonnes"
+        tests:
+          - not_null
+
+  - name: stg_ais_positions
+    description: "Deduplicated AIS vessel positions — one row per vessel per minute"
+    columns:
+      - name: mmsi
+        description: "Maritime Mobile Service Identity"
+        tests:
+          - not_null
+      - name: latitude
+        description: "Vessel latitude (-90 to 90)"
+      - name: longitude
+        description: "Vessel longitude (-180 to 180)"
+
+  - name: stg_ocean_weather
+    description: "Ocean weather forecasts with sea state classification"
+    columns:
+      - name: forecast_time
+        description: "Forecast timestamp (UTC)"
+        tests:
+          - not_null
+      - name: sea_state
+        description: "Douglas sea state scale classification"
+        tests:
+          - accepted_values:
+              values: ['Calm (glassy)', 'Calm (rippled)', 'Smooth', 'Slight', 'Moderate', 'Rough', 'Very rough', 'High', 'Very high', 'Unknown']
+
+  - name: stg_vessel_registry
+    description: "Curated registry of Ulstein-designed vessels"
+    columns:
+      - name: imo_number
+        description: "IMO vessel identification number"
+        tests:
+          - unique
+          - not_null
+      - name: has_x_bow
+        description: "Whether vessel has Ulstein X-BOW hull design"
+        tests:
+          - not_null

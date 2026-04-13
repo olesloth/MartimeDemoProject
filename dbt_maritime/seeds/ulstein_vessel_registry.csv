@@ -1,0 +1,18 @@
+imo_number,vessel_name,design_type,hull_type,has_x_bow,build_year,owner,ship_category
+9684875,Bourbon Orca,SX121,X-BOW,true,2006,Bourbon Offshore,PSV
+9612501,Island Offshore Pioneer,PX121,X-BOW,true,2012,Island Offshore,PSV
+9612499,Island Offshore Supporter,PX121,X-BOW,true,2012,Island Offshore,PSV
+9586426,Olympic Boa,SX121,X-BOW,true,2011,Olympic Shipping,PSV
+9615497,Normand Drott,SX121,X-BOW,true,2013,Solstad Offshore,PSV
+9615502,Normand Flipper,SX121,X-BOW,true,2013,Solstad Offshore,PSV
+9710854,Nexans Aurora,Cable Layer,X-BOW,true,2021,Nexans,Cable Layer
+9498447,Polar Queen,SX121,X-BOW,true,2010,GC Rieber Shipping,PSV
+9622074,Edda Fides,SX148,X-BOW,true,2014,Ostensjo Rederi,Subsea
+9520279,Rem Forza,SX134,X-BOW,true,2010,Remoy Shipping,AHTS
+9520281,Rem Power,SX134,X-BOW,true,2010,Remoy Shipping,AHTS
+9725750,Windea La Cour,SX195,X-BOW,true,2017,Bernhard Schulte,SOV
+9802267,Edda Wind,CSOV,X-BOW,true,2022,Ostensjo Rederi,SOV
+9802279,Edda Breeze,CSOV,X-BOW,true,2022,Ostensjo Rederi,SOV
+9838092,Ulstein Thor,CSOV,X-BOW,true,2024,Ulstein Group,SOV
+9684887,Bourbon Mistral,UT776,Conventional,false,2006,Bourbon Offshore,PSV
+9538282,Siem Daya 1,OCV,Conventional,false,2012,Siem Offshore,Subsea

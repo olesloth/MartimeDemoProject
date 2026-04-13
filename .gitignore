@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+
+# Environment
+.env
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# dbt
+dbt_maritime/target/
+dbt_maritime/dbt_packages/
+dbt_maritime/logs/
+
+# Data files (downloaded during ingestion)
+data/
+*.csv.gz

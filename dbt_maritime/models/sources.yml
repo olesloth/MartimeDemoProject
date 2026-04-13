@@ -1,0 +1,35 @@
+version: 2
+
+sources:
+  - name: raw
+    database: "{{ env_var('SNOWFLAKE_DATABASE', 'MARITIME_ANALYTICS') }}"
+    schema: RAW
+    description: "Raw data landed by ingestion scripts"
+    tables:
+      - name: eu_mrv_emissions
+        description: "EU MRV/THETIS ship emissions data — CO2, fuel consumption, efficiency metrics"
+        columns:
+          - name: imo_number
+            description: "IMO vessel identification number"
+          - name: total_co2_emissions_mt
+            description: "Total CO2 emissions in metric tonnes"
+
+      - name: ais_positions
+        description: "AIS vessel position messages captured from AISStream.io"
+        columns:
+          - name: mmsi
+            description: "Maritime Mobile Service Identity"
+          - name: latitude
+            description: "Vessel latitude"
+          - name: longitude
+            description: "Vessel longitude"
+
+      - name: ocean_weather
+        description: "Ocean forecast data from MET Norway API"
+        columns:
+          - name: latitude
+            description: "Forecast point latitude"
+          - name: longitude
+            description: "Forecast point longitude"
+          - name: wave_height_m
+            description: "Significant wave height in meters"

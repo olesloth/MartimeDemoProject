@@ -1,0 +1,54 @@
+version: 2
+
+models:
+  - name: mart_vessel_efficiency
+    description: "Vessel-level efficiency metrics with Ulstein design flags. Joins emissions data with vessel registry to enable X-BOW vs conventional hull comparisons."
+    columns:
+      - name: imo_number
+        description: "IMO vessel identification number"
+        tests:
+          - not_null
+      - name: reporting_period
+        description: "Reporting year"
+        tests:
+          - not_null
+      - name: is_ulstein_design
+        description: "Whether this vessel is an Ulstein design"
+      - name: has_x_bow
+        description: "Whether this vessel has the X-BOW hull"
+      - name: co2_kg_per_nm
+        description: "CO2 efficiency: kg CO2 per nautical mile"
+      - name: efficiency_rank_pct
+        description: "Percentile rank within ship type (0 = most efficient)"
+
+  - name: mart_fleet_overview
+    description: "Aggregated fleet statistics by ship type, hull design, and year"
+    columns:
+      - name: ship_type
+        description: "Vessel ship type classification"
+        tests:
+          - not_null
+      - name: reporting_period
+        description: "Reporting year"
+        tests:
+          - not_null
+
+  - name: mart_vessel_voyages
+    description: "AIS positions enriched with nearest weather observations"
+    columns:
+      - name: mmsi
+        description: "Maritime Mobile Service Identity"
+        tests:
+          - not_null
+
+  - name: mart_weather_conditions
+    description: "Daily ocean weather conditions by Norwegian coastal region"
+    columns:
+      - name: region
+        description: "Named coastal region"
+        tests:
+          - not_null
+      - name: forecast_date
+        description: "Date of forecast"
+        tests:
+          - not_null
