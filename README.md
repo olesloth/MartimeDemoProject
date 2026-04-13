@@ -50,7 +50,7 @@ Ulstein Registry (Seed)  ──┘                     dbt Core
 ### 1. Setup
 
 ```bash
-git clone <repo-url> && cd DataEngineerDemoProject
+git clone https://github.com/olesloth/MartimeDemoProject.git && cd MartimeDemoProject
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 
@@ -60,7 +60,13 @@ cp .env.example .env
 
 ### 2. Snowflake Setup
 
-Run `setup/snowflake_setup.sql` in Snowflake Worksheets to create the database, schemas, warehouse, and raw tables.
+Run the setup script to create the database, schemas, warehouse, and raw tables:
+
+```bash
+python setup/run_setup.py
+```
+
+This executes all SQL statements from `setup/snowflake_setup.sql` against your Snowflake account.
 
 ### 3. Install dbt Packages
 
@@ -133,7 +139,9 @@ api/                    FastAPI REST API
   schemas.py            Pydantic response models
   database.py           Snowflake connection management
 
-setup/                  Snowflake DDL scripts
+setup/                  Snowflake setup
+  snowflake_setup.sql   DDL for database, schemas, and raw tables
+  run_setup.py          Python runner to execute SQL setup against Snowflake
 ```
 
 ## Cost Management
