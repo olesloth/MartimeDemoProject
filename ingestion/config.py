@@ -21,9 +21,6 @@ AISSTREAM_API_KEY = os.getenv("AISSTREAM_API_KEY", "")
 MET_NORWAY_BASE_URL = "https://api.met.no/weatherapi/oceanforecast/2.0/complete"
 MET_NORWAY_USER_AGENT = "UlsteinMaritimeAnalytics/1.0 github.com/demo (contact@example.com)"
 
-# EU MRV THETIS emissions data
-EU_MRV_URL = "https://mrv.emsa.europa.eu/api/public-emission-report/reporting-period-document/binary/csv/"
-
 # Norwegian Sea bounding box for AIS filtering
 # Covers major shipping lanes where Ulstein vessels operate
 AIS_BOUNDING_BOX = {

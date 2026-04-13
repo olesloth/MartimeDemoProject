@@ -9,10 +9,12 @@ Requires a free API key from aisstream.io (register with GitHub).
 
 import json
 import logging
+import ssl
 import sys
 import time
 from datetime import datetime, timezone
 
+import certifi
 import pandas as pd
 import websocket
 
@@ -107,7 +109,8 @@ def capture_ais_snapshot(
     )
 
     # Run with a timeout slightly longer than capture duration
-    ws.run_forever(ping_interval=30, ping_timeout=10)
+    sslopt = {"cert_reqs": ssl.CERT_REQUIRED, "ca_certs": certifi.where()}
+    ws.run_forever(ping_interval=30, ping_timeout=10, sslopt=sslopt)
 
     return records
 
